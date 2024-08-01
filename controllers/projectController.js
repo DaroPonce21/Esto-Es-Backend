@@ -82,17 +82,15 @@ exports.createProject = async (req, res) => {
         const project = await Project.create({
             name, description, projectManager, status,
         })
-        /*
-                if (assignedTo.length > 0) {
-        
-                    const users = await User.findAll({ where: { id: { [Op.in]: assignedTo } } })
-                    if (users.length !== assignedTo.length) {
-                        return res.status(400).json({ message: 'Uno o más usuarios no existen' })
-        
-                    }
-                               await project.addUsers(users)
-                    }*/
-        await project.addUsers(assignedTo)
+        if (assignedTo.length > 0) {
+
+            const users = await User.findAll({ where: { id: { [Op.in]: assignedTo } } })
+            if (users.length !== assignedTo.length) {
+                return res.status(400).json({ message: 'Uno o más usuarios no existen' })
+
+            }
+            await project.addUsers(users)
+        }
         res.status(201).json(project)
 
     } catch (error) {
@@ -166,3 +164,4 @@ exports.deleteProject = async (req, res) => {
 
 
 }
+

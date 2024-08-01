@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const sequelize = require('./config/database')
 const projectRoutes = require('./routes/projects')
+const userRoutes = require('./routes/userRoutes')
 const setupSwagger = require('./swagger')
 require('dotenv').config()
 
@@ -10,6 +11,7 @@ const app = express()
 app.use(bodyParser.json())
 
 app.use('/projects', projectRoutes)
+app.use('/users', userRoutes)
 
 setupSwagger(app)
 
