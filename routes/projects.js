@@ -49,7 +49,7 @@ const router = express.Router()
 
 /**
  * @swagger
- * /:
+ * /projects:
  *   get:
  *     summary: Obtiene una lista de proyectos con paginación
  *     parameters:
@@ -91,7 +91,7 @@ router.get('/', projectController.getProjects)
 
 /**
  * @swagger
- * /{id}:
+ * /projects/{id}:
  *   get:
  *     summary: Obtiene un proyecto por su ID
  *     parameters:
@@ -115,7 +115,7 @@ router.get('/:id', projectController.getProjectById)
 
 /**
  * @swagger
- * /:
+ * /projects:
  *   post:
  *     summary: Crea un nuevo proyecto
  *     requestBody:
@@ -138,7 +138,7 @@ router.post('/', projectController.createProject)
 
 /**
  * @swagger
- * /{id}:
+ * /proyects/{id}:
  *   put:
  *     summary: Actualiza un proyecto existente
  *     parameters:
@@ -170,7 +170,7 @@ router.put('/:id', projectController.updateProject)
 
 /**
  * @swagger
- * /{id}:
+ * /proyects/{id}:
  *   delete:
  *     summary: Elimina un proyecto por su ID
  *     parameters:
