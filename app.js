@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const sequelize = require('./config/database')
 const projectRoutes = require('./routes/projects')
 const setupSwagger = require('./swagger')
+require('dotenv').config()
 
 const app = express()
 
