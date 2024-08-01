@@ -59,6 +59,8 @@ const userController = require('../controllers/userController')
  *                   description: Descripción del error.
  *                   example: "Error al crear el usuario"
  */
-router.post('/users', userController.createUser)
+router.post('/', userController.createUser)
+
+router.get('/', userController.getUser)
 
 module.exports = router
